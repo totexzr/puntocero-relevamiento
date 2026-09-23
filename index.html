@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Relevamiento técnico PUNTOCERO - Videovigilancia, alarmas e Internet satelital.">
+  <title>Relevamiento Técnico — PUNTOCERO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="card">
+      <header class="brand">
+        <div class="brand-mark">P0</div>
+        <div>
+          <h1>PUNTOCERO</h1>
+          <p>Seguridad • Conectividad • Tecnología</p>
+        </div>
+      </header>
+
+      <div class="intro">
+        <h2>Relevamiento Técnico</h2>
+        <p>Completá estos datos en aproximadamente 1 minuto para que nuestro equipo evalúe tus necesidades y prepare un presupuesto a medida.</p>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-info">
+          <span id="stepText">Paso 1 de 3</span>
+          <span id="progressPercent">33%</span>
+        </div>
+        <div class="progress"><div id="progressBar"></div></div>
+      </div>
+
+      <form id="surveyForm" novalidate>
+        <!-- PASO 1 -->
+        <section class="step active" data-step="1">
+          <h3>Tus datos</h3>
+
+          <label>
+            Nombre y Apellido / Empresa <span>*</span>
+            <input id="nombre" name="nombre" type="text" maxlength="100" placeholder="Ej: Juan Pérez / Almacén El Sol" required>
+          </label>
+
+          <label>
+            Teléfono de contacto (WhatsApp) <span>*</span>
+            <input id="telefono" name="telefono" type="text" maxlength="30" inputmode="tel" placeholder="Ej: 3794 123456" required>
+          </label>
+
+          <label>
+            Ubicación / Localidad <span>*</span>
+            <input id="localidad" name="localidad" type="text" maxlength="100" placeholder="Ej: Corrientes Capital" required>
+          </label>
+
+          <label>
+            Tipo de propiedad <span>*</span>
+            <select id="propiedad" name="propiedad" required>
+              <option value="">Seleccioná una opción</option>
+              <option>Local Comercial</option>
+              <option>Casa / Residencia</option>
+              <option>Depósito / Galpón / Campo</option>
+              <option>Otro</option>
+            </select>
+          </label>
+
+          <label id="otroPropiedadWrap" class="conditional hidden">
+            ¿Qué tipo de propiedad?
+            <input id="otroPropiedad" name="otroPropiedad" type="text" maxlength="100" placeholder="Ej: Oficina">
+          </label>
+
+          <button type="button" class="btn primary next">Continuar →</button>
+        </section>
+
+        <!-- PASO 2 -->
+        <section class="step" data-step="2">
+          <h3>Conectividad y alarma</h3>
+
+          <fieldset>
+            <legend>¿Tenés conexión a Internet en el lugar? <span>*</span></legend>
+            <label class="option"><input type="radio" name="internet" value="Sí, tengo internet estable" required> Sí, tengo internet estable</label>
+            <label class="option"><input type="radio" name="internet" value="Sí, pero el servicio es inestable / tiene cortes frecuentes"> Sí, pero el servicio es inestable / tiene cortes frecuentes</label>
+            <label class="option"><input type="radio" name="internet" value="No, no tengo conexión de internet en el lugar"> No, no tengo conexión a internet en el lugar</label>
+          </fieldset>
+
+          <div id="starlinkWrap" class="conditional hidden">
+            <fieldset>
+              <legend>🛰️ ¿Te interesa cotizar Internet Satelital Starlink con PUNTOCERO?</legend>
+              <p class="hint">Esta opción aparece porque indicaste que tu conexión es inestable o que no tenés Internet.</p>
+              <label class="option"><input type="radio" name="starlink" value="Sí, me interesa recibir asesoramiento y cotización de Starlink"> Sí, me interesa recibir asesoramiento y cotización de Starlink</label>
+              <label class="option"><input type="radio" name="starlink" value="No, por el momento me arreglo con mi servicio actual"> No, por el momento me arreglo con mi servicio actual</label>
+            </fieldset>
+          </div>
+
+          <fieldset>
+            <legend>¿Cuenta la propiedad con sistema de alarma o monitoreo actualmente? <span>*</span></legend>
+            <label class="option"><input type="radio" name="alarma" value="No tengo alarma (Me gustaría recibir cotización)" required> No tengo alarma — Me gustaría recibir cotización</label>
+            <label class="option"><input type="radio" name="alarma" value="Sí, pero quiero renovarla / integrarla con las cámaras"> Sí, pero quiero renovarla / integrarla con las cámaras</label>
+            <label class="option"><input type="radio" name="alarma" value="Sí, tengo y funciona bien"> Sí, tengo y funciona bien</label>
+          </fieldset>
+
+          <div class="buttons">
+            <button type="button" class="btn secondary prev">← Volver</button>
+            <button type="button" class="btn primary next">Continuar →</button>
+          </div>
+        </section>
+
+        <!-- PASO 3 -->
+        <section class="step" data-step="3">
+          <h3>Tu proyecto</h3>
+
+          <label>
+            ¿Cuántas cámaras querés colocar aproximadamente?
+            <input id="camaras" name="camaras" type="number" min="0" max="999" inputmode="numeric" placeholder="Ej: 4">
+          </label>
+          <p class="hint">Si todavía no sabés la cantidad, podés dejarlo vacío.</p>
+
+          <label>
+            Distribución y zonas críticas a vigilar
+            <textarea id="zonas" name="zonas" maxlength="1000" placeholder="Ej: Caja registradora, portón de ingreso, depósito, patio, estacionamiento..."></textarea>
+          </label>
+
+          <fieldset>
+            <legend>¿Qué tipo de visión te interesa?</legend>
+            <label class="option"><input type="checkbox" name="vision" value="Estándar Full HD (Visión nocturna B&N)"> Estándar Full HD — Visión nocturna B&N</label>
+            <label class="option"><input type="checkbox" name="vision" value="Visión Nocturna A COLOR 24/7 (ColorVu)"> Visión nocturna <strong>A COLOR 24/7</strong> — ColorVu</label>
+            <label class="option"><input type="checkbox" name="vision" value="Cámaras Móviles PTZ (Giran 360° desde el celular)"> Cámaras móviles <strong>PTZ</strong> — giran 360° desde el celular</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>¿Cuánto tiempo querés conservar las grabaciones?</legend>
+            <label class="option"><input type="radio" name="almacenamiento" value="7 a 10 días"> 7 a 10 días</label>
+            <label class="option"><input type="radio" name="almacenamiento" value="15 a 20 días"> 15 a 20 días</label>
+            <label class="option"><input type="radio" name="almacenamiento" value="30 días o más"> 30 días o más</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>¿Cuándo te gustaría realizar la instalación? <span>*</span></legend>
+            <label class="option"><input type="radio" name="urgencia" value="Inmediata (Esta semana)" required> Inmediata — Esta semana</label>
+            <label class="option"><input type="radio" name="urgencia" value="Próximos 15 a 30 días"> Próximos 15 a 30 días</label>
+            <label class="option"><input type="radio" name="urgencia" value="Solo evaluando costos"> Solo estoy evaluando costos</label>
+          </fieldset>
+
+          <label>
+            ¿Querés contarnos algún detalle más?
+            <textarea id="observaciones" name="observaciones" maxlength="1000" placeholder="Ej: quiero controlar el negocio desde el celular, necesito cubrir el fondo, etc."></textarea>
+          </label>
+
+          <div class="buttons">
+            <button type="button" class="btn secondary prev">← Volver</button>
+            <button type="submit" class="btn primary" id="submitBtn">📩 Enviar relevamiento</button>
+          </div>
+        </section>
+
+        <div id="message" class="message hidden"></div>
+      </form>
+
+      <footer>© PUNTOCERO — Seguridad • Conectividad • Tecnología</footer>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
