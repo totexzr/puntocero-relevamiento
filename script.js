@@ -2,7 +2,7 @@
   PUNTOCERO - formulario dinámico
   IMPORTANTE: pegá la URL de tu Web App de Google Apps Script en API_URL.
 */
-const API_URL = "PEGAR_AQUI_LA_URL_DE_TU_WEB_APP";
+const API_URL = "https://script.google.com/macros/s/AKfycbzcHZ4LaOJvBQpwVzyh67kidpAGdl7REYMw9oZMI62I45Nk7tIleeEv5DNStV_1RQ44/exec";
 
 const steps = [...document.querySelectorAll(".step")];
 const progressBar = document.getElementById("progressBar");
