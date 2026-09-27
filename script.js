@@ -2,7 +2,7 @@
   PUNTOCERO - formulario dinámico
   IMPORTANTE: pegá la URL de tu Web App de Google Apps Script en API_URL.
 */
-const API_URL = "https://script.google.com/macros/s/AKfycbzcHZ4LaOJvBQpwVzyh67kidpAGdl7REYMw9oZMI62I45Nk7tIleeEv5DNStV_1RQ44/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbyIGg_9m1EEKfDLTsf_1gHovir2mECQi1XvDwG08Qf99nMCK-Fciy6rihHqWCm7bv2-/exec";
 
 const steps = [...document.querySelectorAll(".step")];
 const progressBar = document.getElementById("progressBar");
@@ -127,7 +127,7 @@ form.addEventListener("submit", async e=>{
         <p>Recibimos correctamente tus datos. El equipo de <strong>PUNTOCERO</strong> los analizará y se pondrá en contacto con vos por WhatsApp.</p>
         <p>Si necesitás atención inmediata, podés escribirnos directamente.</p>
         <a class="btn primary" style="display:inline-block;text-decoration:none;margin-top:8px"
-           href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">
+           href="https://wa.me/543782461409" target="_blank" rel="noopener">
            💬 Hablar con PUNTOCERO por WhatsApp
         </a>
       </div>
